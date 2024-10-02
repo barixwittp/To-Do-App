@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+        .bofore-list::before{
+            content: "";
+            position: absolute;
+            height: 28px;
+            width: 28px;
+            border-radius: 50%;
+            background-image: url('./images/unchecked.png');
+            background-size: cover;
+            background-position: center;
+            top: 9px;
+            left: -30px;
+        }
+
+        .checked{
+            color: #555;
+            text-decoration: line-through;
+        }
+
+        .checked::before{
+            background-image: url('./images/checked.png') !important;
+        }
+
+        .list-item {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 90%;
+    white-space: normal; /* Ensure it wraps onto a new line */
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container w-full min-h-screen bg-gradient-to-b from-[#cd9cf2] to-[#a990f4] flex justify-center items-start py-[40px] ">
+
+        <div class="max-w-[540px] bg-white rounded-lg shadow-lg px-[30px] gap-[50px]">
+
+            <h2 class="flex flex-row font-bold text-[30px] px-[20px] mt-[20px] mb-[20px] text-center justify-center">Todo list 
+                <img src="./images/icon.png" alt="" class="w-[50px] ml-2">
+            </h2>
+
+            <div class="flex justify-between pl-[20px] rounded-[30px] bg-slate-400 relative mx-4 mb-4">
+
+                <input type="text" placeholder="Add Your Text" id="inputbox" class="w-full bg-transparent p-[10px] outline-none border-none text-white placeholder:text-white">
+
+                <button id="addlist" onclick="addTask()" class="py-[16px] px-[50px] bg-[#ff5945] rounded-[40px] text-white">Add</button>
+                
+            </div>
+
+            <div class="lists px-[20px] pb-[20px] ">
+                <ul class="list-disc relative">
+                    <!-- <li class="list-none font-[17px] p-[10px] select-none cursor-pointer bofore-list relative">task 1</li>
+                    <li class="list-none font-[17px] p-[10px] select-none cursor-pointer bofore-list relative">task 2</li>
+                    <li class="list-none font-[17px] p-[10px] select-none cursor-pointer bofore-list checked relative">task 3</li> -->
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+    
+</body>
+</html>
